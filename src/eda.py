@@ -49,3 +49,14 @@ sns.barplot(
 plt.title("Top Protein Foods")
 plt.show()
 
+# Correlation heatmap for calorie_df
+plt.figure(figsize=(10,6))
+
+sns.heatmap(
+    calorie_df.corr(numeric_only=True),
+    annot=True,
+    cmap='coolwarm'
+)
+
+plt.title("Correlation Heatmap")
+plt.show()
