@@ -6,7 +6,7 @@ food_df = pd.read_csv(r"C:\Documents\Projects\Diet_planner\data\Food Nutrition D
 
 calorie_df = pd.read_csv(r"C:\Documents\Projects\Diet_planner\data\Calorie Requirement Dataset.csv")
 
-'''print(health_df.info())
+print(health_df.info())
 print(food_df.info())
 print(calorie_df.info())
 
@@ -34,8 +34,23 @@ food_df.drop_duplicates(inplace=True)
 calorie_df.drop_duplicates(inplace=True)
 
 health_df["Gender"] = health_df["Gender"].str.capitalize()
-health_df["Goal"] = health_df["Goal"].str.title()'''
+health_df["Goal"] = health_df["Goal"].str.title()
 
 print(health_df.shape)
 print(food_df.shape)
 print(calorie_df.shape)
+
+health_df.to_csv(
+    "data/cleaned/health_cleaned.csv",
+    index=False
+)
+
+food_df.to_csv(
+    "data/cleaned/food_cleaned.csv",
+    index=False
+)
+
+calorie_df.to_csv(
+    "data/cleaned/calorie_cleaned.csv",
+    index=False
+)
