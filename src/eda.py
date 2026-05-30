@@ -23,3 +23,12 @@ plt.figure(figsize=(8,5))
 sns.scatterplot(x='Age', y='BMI', data=health_df)
 plt.title("Age vs BMI")
 plt.show()
+
+# calories by activity level
+plt.figure(figsize=(8,5))
+sns.boxplot(
+    x='Physical_Activity_Level',
+    y='Daily_Caloric_Intake',
+    data=calorie_df
+)
+plt.show()
