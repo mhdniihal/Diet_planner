@@ -17,3 +17,9 @@ plt.figure(figsize=(8,5))
 sns.countplot(x='Goal', data=health_df)
 plt.title("Goal Distribution")
 plt.show()
+
+# Age vs BMI
+plt.figure(figsize=(8,5))
+sns.scatterplot(x='Age', y='BMI', data=health_df)
+plt.title("Age vs BMI")
+plt.show()
