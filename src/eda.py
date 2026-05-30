@@ -6,3 +6,7 @@ health_df = pd.read_csv("data/cleaned/health_cleaned.csv")
 food_df = pd.read_csv("data/cleaned/food_cleaned.csv")
 calorie_df = pd.read_csv("data/cleaned/calorie_cleaned.csv")
 
+plt.figure(figsize=(8,5))
+sns.histplot(health_df['BMI'], bins=20, kde=True)
+plt.title("BMI Distribution")
+plt.show()
