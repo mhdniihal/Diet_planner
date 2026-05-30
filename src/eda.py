@@ -31,4 +31,21 @@ sns.boxplot(
     y='Daily_Caloric_Intake',
     data=calorie_df
 )
+plt.show()  
+
+
+# protein food distribution
+top_protein = food_df.sort_values(
+    by='Protein (g)',
+    ascending=False
+).head(10)
+
+plt.figure(figsize=(10,5))
+sns.barplot(
+    x='Protein (g)',
+    y='Food_Item',
+    data=top_protein
+)
+plt.title("Top Protein Foods")
 plt.show()
+
