@@ -72,3 +72,25 @@ r2 = r2_score(
 
 print("MAE:", mae)
 print("R2 Score:", r2)
+
+
+import joblib
+
+
+joblib.dump(
+    model,
+    "models/calorie_model.pkl"
+)
+
+sample = [[
+    22,
+    1,
+    80,
+    175,
+    26.1,
+    2
+]]
+
+result = model.predict(sample)
+
+print(result)
