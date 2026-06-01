@@ -1,8 +1,8 @@
 import pandas as pd
 
 food_df = pd.read_csv("data/cleaned/food_cleaned.csv")
-print(food_df.head())
-print(food_df.columns)
+'''print(food_df.head())
+print(food_df.columns)'''
 
 
 food_df['Calories (kcal)'] = pd.to_numeric(
@@ -75,3 +75,18 @@ def generate_diet(goal):
     ].head(3)
 
     return breakfast, lunch, dinner
+
+# for testing the function
+'''goal = "Fat Loss"
+
+breakfast, lunch, dinner = generate_diet(goal)
+
+
+print("\nBREAKFAST")
+print(breakfast['Food_Item'])
+
+print("\nLUNCH")
+print(lunch['Food_Item'])
+
+print("\nDINNER")
+print(dinner['Food_Item'])'''
