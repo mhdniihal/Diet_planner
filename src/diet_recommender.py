@@ -57,3 +57,21 @@ lunch = food_df[
 dinner = food_df[
     food_df['Meal_Type'] == 'Dinner'
 ].head(3)
+
+def generate_diet(goal):
+
+    foods = recommend_diet(goal)
+
+    breakfast = foods[
+        foods['Meal_Type'] == 'Breakfast'
+    ].head(3)
+
+    lunch = foods[
+        foods['Meal_Type'] == 'Lunch'
+    ].head(3)
+
+    dinner = foods[
+        foods['Meal_Type'] == 'Dinner'
+    ].head(3)
+
+    return breakfast, lunch, dinner
