@@ -1,5 +1,7 @@
 import streamlit as st
 
+from diet_recommender import generate_diet
+
 st.title("🥗 Diet Planner Using BMI Calculator")
 st.write("Generate personalized diet plans based on your BMI and fitness goals.")
 
@@ -82,4 +84,25 @@ calories = model.predict(sample)
 
 st.success(
     f"Recommended Calories: {int(calories[0])} kcal/day"
+)
+
+# Generate Diet Plan
+breakfast, lunch, dinner = generate_diet(goal)
+
+st.subheader("🍳 Breakfast")
+
+st.write(
+    breakfast["Food_Item"].tolist()
+)
+
+st.subheader("🍛 Lunch")
+
+st.write(
+    lunch["Food_Item"].tolist()
+)
+
+st.subheader("🌙 Dinner")
+
+st.write(
+    dinner["Food_Item"].tolist()
 )
