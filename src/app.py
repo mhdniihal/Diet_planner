@@ -65,3 +65,21 @@ category = bmi_category(bmi)
 st.info(f"Category: {category}")
 
 
+import joblib
+
+model = joblib.load(
+    "models/calorie_model.pkl"
+)
+
+sample = [[
+    age,
+    weight,
+    height,
+    bmi
+]]
+
+calories = model.predict(sample)
+
+st.success(
+    f"Recommended Calories: {int(calories[0])} kcal/day"
+)
